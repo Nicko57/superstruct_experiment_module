@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import EMContext from './EMContext'
 import Iteration from './Iteration'
-import Adding from './Adding'
+import Add from './Add'
 
 export const EM = ({
   collapse: _collapse = false,
@@ -51,7 +51,7 @@ export const EM = ({
         <div className={`${collapse ? '' : 'hidden'}`}>
           <div className='mt-4 rounded-lg flex flex-col gap-1'>
             {iterations.map((_, index) => <Iteration index={index} key={index} />)}
-            {adding && <Adding ref={ref} />}
+            {adding && <Add ref={ref} />}
           </div>
           <div className='ml-auto mt-6 mr-0 text-right font-bold'>
             {adding &&
