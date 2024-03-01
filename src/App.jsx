@@ -1,33 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { EM } from './test/EM'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="mb-8 font-bold text-2xl">This is our Test Page</h1>
+      <div className='flex flex-col gap-5 p-4 bg-black'>
+        <EM iterations={[
+          { selection: 2, title: 'Iteration title 1' },
+          { selection: 4, title: 'Iteration title 2' },
+          { selection: 1, title: 'Iteration title 3' },
+        ]} />
+        <EM iterations={[
+          { selection: 2, title: 'Iteration title 1' },
+          { selection: 4, title: 'Iteration title 2' },
+          { selection: 1, title: 'Iteration title 3' },
+        ]} />
+        <EM collapse={true} iterations={[
+          { selection: 2, title: 'Iteration title 1' },
+          { selection: 4, title: 'Iteration title 2' },
+          { selection: 1, title: 'Iteration title 3' },
+        ]} />
+        <EM iterations={[
+          { selection: 2, title: 'Iteration title 1' },
+          { selection: 4, title: 'Iteration title 2' },
+          { selection: 1, title: 'Iteration title 3' },
+        ]} />
+        <EM iterations={[
+          { selection: 2, title: 'Iteration title 1' },
+          { selection: 4, title: 'Iteration title 2' },
+          { selection: 1, title: 'Iteration title 3' },
+        ]} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
