@@ -31,8 +31,7 @@ const Iteration = ({
 
   const onClickSelection = (sel) => {
     const clonedIteration = { ...iteration }
-    
-    clonedIteration.selection ^= sel
+    clonedIteration.selection = (clonedIteration.selection !== sel) ? sel : 0
 
     updateIterations(clonedIteration)
   }
@@ -54,7 +53,7 @@ const Iteration = ({
         <div className='flex-auto py-4'>
           {Object.keys(selections).map(sel =>
             <button key={sel}
-              className={`px-4 py-2 m-2 uppercase hover:border-initial focus:outline-0 focus:border-initial border-2 border-${sel & iteration.selection ? 'green' : 'gray'}-500`}
+              className={`px-4 py-2 m-2 uppercase hover:border-initial focus:outline-0 focus:border-initial border-2 border-${sel === iteration.selection ? 'green' : 'gray'}-500`}
               onClick={() => onClickSelection(sel)}
             >
               {selections[sel]}
